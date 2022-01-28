@@ -22,6 +22,7 @@
 		8B4C018A27A45D7300F68EE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4C018227A45D7300F68EE1 /* Main.storyboard */; };
 		8B4C018C27A45DBB00F68EE1 /* PostsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C018B27A45DBB00F68EE1 /* PostsListViewModel.swift */; };
 		8B4C018E27A4600A00F68EE1 /* PostsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C018D27A4600A00F68EE1 /* PostsListViewController.swift */; };
+		8B4C019027A462CF00F68EE1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C018F27A462CF00F68EE1 /* Enums.swift */; };
 		8BFE2BDD27A4034800056E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE2BDC27A4034800056E24 /* AppDelegate.swift */; };
 		8BFE2BDF27A4034800056E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE2BDE27A4034800056E24 /* SceneDelegate.swift */; };
 		8BFE2BE627A4034D00056E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE2BE527A4034D00056E24 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		8B4C018327A45D7300F68EE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B4C018B27A45DBB00F68EE1 /* PostsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewModel.swift; sourceTree = "<group>"; };
 		8B4C018D27A4600A00F68EE1 /* PostsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListViewController.swift; sourceTree = "<group>"; };
+		8B4C018F27A462CF00F68EE1 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		8BFE2BD927A4034800056E24 /* goodwall_coding_challenge_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodwall_coding_challenge_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFE2BDC27A4034800056E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BFE2BDE27A4034800056E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				8B4C016A27A428FD00F68EE1 /* Helpers */,
 				8B4C016827A428B500F68EE1 /* Constants.swift */,
+				8B4C018F27A462CF00F68EE1 /* Enums.swift */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				8B4C016D27A429B400F68EE1 /* UIImageView+Extensions.swift in Sources */,
 				8B4C018E27A4600A00F68EE1 /* PostsListViewController.swift in Sources */,
 				8B4C018827A45D7300F68EE1 /* ViewController.swift in Sources */,
+				8B4C019027A462CF00F68EE1 /* Enums.swift in Sources */,
 				8B4C016327A4219A00F68EE1 /* GoodWallAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

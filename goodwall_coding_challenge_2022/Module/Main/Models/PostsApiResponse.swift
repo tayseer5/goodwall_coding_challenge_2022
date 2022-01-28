@@ -29,11 +29,16 @@ struct Response: Codable {
 
 // MARK: - Payload
 struct Payload: Codable {
-    let entries: [Entry]?
+    let posts: [Post]?
+    
+    enum CodingKeys: String, CodingKey {
+        case posts = "entries"
+    }
 }
 
+
 // MARK: - Entry
-struct Entry: Codable {
+struct Post: Codable {
     let contentType: String?
     let item: Item?
 
