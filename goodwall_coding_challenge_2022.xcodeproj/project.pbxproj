@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B4C015927A41B4000F68EE1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015827A41B4000F68EE1 /* RxCocoa */; };
+		8B4C015B27A41B4000F68EE1 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015A27A41B4000F68EE1 /* RxSwift */; };
+		8B4C015E27A41F4E00F68EE1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015D27A41F4E00F68EE1 /* Moya */; };
+		8B4C016027A41F4E00F68EE1 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015F27A41F4E00F68EE1 /* ReactiveMoya */; };
+		8B4C016327A4219A00F68EE1 /* GoodWallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C016227A4219A00F68EE1 /* GoodWallAPI.swift */; };
+		8B4C016527A421B100F68EE1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C016427A421B100F68EE1 /* NetworkManager.swift */; };
+		8B4C016727A421DD00F68EE1 /* NetworkableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C016627A421DD00F68EE1 /* NetworkableProtocol.swift */; };
+		8B4C016927A428B500F68EE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C016827A428B500F68EE1 /* Constants.swift */; };
+		8B4C016D27A429B400F68EE1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C016C27A429B400F68EE1 /* UIImageView+Extensions.swift */; };
+		8B4C017027A42B9800F68EE1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C016F27A42B9800F68EE1 /* Kingfisher */; };
+		8B4C017327A4304000F68EE1 /* PostsApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C017227A4304000F68EE1 /* PostsApiResponse.swift */; };
 		8BFE2BDD27A4034800056E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE2BDC27A4034800056E24 /* AppDelegate.swift */; };
 		8BFE2BDF27A4034800056E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE2BDE27A4034800056E24 /* SceneDelegate.swift */; };
 		8BFE2BE127A4034800056E24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE2BE027A4034800056E24 /* ViewController.swift */; };
@@ -36,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B4C016227A4219A00F68EE1 /* GoodWallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWallAPI.swift; sourceTree = "<group>"; };
+		8B4C016427A421B100F68EE1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8B4C016627A421DD00F68EE1 /* NetworkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkableProtocol.swift; sourceTree = "<group>"; };
+		8B4C016827A428B500F68EE1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B4C016C27A429B400F68EE1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		8B4C017227A4304000F68EE1 /* PostsApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsApiResponse.swift; sourceTree = "<group>"; };
 		8BFE2BD927A4034800056E24 /* goodwall_coding_challenge_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodwall_coding_challenge_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFE2BDC27A4034800056E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BFE2BDE27A4034800056E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +73,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4C015B27A41B4000F68EE1 /* RxSwift in Frameworks */,
+				8B4C016027A41F4E00F68EE1 /* ReactiveMoya in Frameworks */,
+				8B4C015927A41B4000F68EE1 /* RxCocoa in Frameworks */,
+				8B4C015E27A41F4E00F68EE1 /* Moya in Frameworks */,
+				8B4C017027A42B9800F68EE1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +98,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B4C015127A417F400F68EE1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C015627A4189A00F68EE1 /* Comments */,
+				8B4C015527A4188E00F68EE1 /* PostsList */,
+				8BFE2BE227A4034800056E24 /* Main.storyboard */,
+				8BFE2BE027A4034800056E24 /* ViewController.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		8B4C015227A4181B00F68EE1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8BFE2BDC27A4034800056E24 /* AppDelegate.swift */,
+				8BFE2BDE27A4034800056E24 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8B4C015327A4183100F68EE1 /* Comman */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C016A27A428FD00F68EE1 /* Helpers */,
+				8B4C016827A428B500F68EE1 /* Constants.swift */,
+			);
+			path = Comman;
+			sourceTree = "<group>";
+		};
+		8B4C015427A4183C00F68EE1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C016127A4216000F68EE1 /* Services */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8B4C015527A4188E00F68EE1 /* PostsList */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C017127A4302C00F68EE1 /* Model */,
+			);
+			path = PostsList;
+			sourceTree = "<group>";
+		};
+		8B4C015627A4189A00F68EE1 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		8B4C016127A4216000F68EE1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C016227A4219A00F68EE1 /* GoodWallAPI.swift */,
+				8B4C016427A421B100F68EE1 /* NetworkManager.swift */,
+				8B4C016627A421DD00F68EE1 /* NetworkableProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B4C016A27A428FD00F68EE1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C016B27A4296600F68EE1 /* Extentions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B4C016B27A4296600F68EE1 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C016C27A429B400F68EE1 /* UIImageView+Extensions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		8B4C017127A4302C00F68EE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B4C017227A4304000F68EE1 /* PostsApiResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8BFE2BD027A4034800056E24 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +207,10 @@
 		8BFE2BDB27A4034800056E24 /* goodwall_coding_challenge_2022 */ = {
 			isa = PBXGroup;
 			children = (
-				8BFE2BDC27A4034800056E24 /* AppDelegate.swift */,
-				8BFE2BDE27A4034800056E24 /* SceneDelegate.swift */,
-				8BFE2BE027A4034800056E24 /* ViewController.swift */,
-				8BFE2BE227A4034800056E24 /* Main.storyboard */,
+				8B4C015427A4183C00F68EE1 /* Manager */,
+				8B4C015327A4183100F68EE1 /* Comman */,
+				8B4C015227A4181B00F68EE1 /* Application */,
+				8B4C015127A417F400F68EE1 /* Module */,
 				8BFE2BE527A4034D00056E24 /* Assets.xcassets */,
 				8BFE2BE727A4034D00056E24 /* LaunchScreen.storyboard */,
 				8BFE2BEA27A4034D00056E24 /* Info.plist */,
@@ -143,6 +251,13 @@
 			dependencies = (
 			);
 			name = goodwall_coding_challenge_2022;
+			packageProductDependencies = (
+				8B4C015827A41B4000F68EE1 /* RxCocoa */,
+				8B4C015A27A41B4000F68EE1 /* RxSwift */,
+				8B4C015D27A41F4E00F68EE1 /* Moya */,
+				8B4C015F27A41F4E00F68EE1 /* ReactiveMoya */,
+				8B4C016F27A42B9800F68EE1 /* Kingfisher */,
+			);
 			productName = goodwall_coding_challenge_2022;
 			productReference = 8BFE2BD927A4034800056E24 /* goodwall_coding_challenge_2022.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +330,11 @@
 				Base,
 			);
 			mainGroup = 8BFE2BD027A4034800056E24;
+			packageReferences = (
+				8B4C015727A41B4000F68EE1 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8B4C015C27A41F4D00F68EE1 /* XCRemoteSwiftPackageReference "Moya" */,
+				8B4C016E27A42B9800F68EE1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8BFE2BDA27A4034800056E24 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +378,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4C016727A421DD00F68EE1 /* NetworkableProtocol.swift in Sources */,
 				8BFE2BE127A4034800056E24 /* ViewController.swift in Sources */,
 				8BFE2BDD27A4034800056E24 /* AppDelegate.swift in Sources */,
+				8B4C016527A421B100F68EE1 /* NetworkManager.swift in Sources */,
+				8B4C016927A428B500F68EE1 /* Constants.swift in Sources */,
+				8B4C017327A4304000F68EE1 /* PostsApiResponse.swift in Sources */,
 				8BFE2BDF27A4034800056E24 /* SceneDelegate.swift in Sources */,
+				8B4C016D27A429B400F68EE1 /* UIImageView+Extensions.swift in Sources */,
+				8B4C016327A4219A00F68EE1 /* GoodWallAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +730,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B4C015727A41B4000F68EE1 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		8B4C015C27A41F4D00F68EE1 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		8B4C016E27A42B9800F68EE1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B4C015827A41B4000F68EE1 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B4C015727A41B4000F68EE1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8B4C015A27A41B4000F68EE1 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B4C015727A41B4000F68EE1 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		8B4C015D27A41F4E00F68EE1 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B4C015C27A41F4D00F68EE1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		8B4C015F27A41F4E00F68EE1 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B4C015C27A41F4D00F68EE1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		8B4C016F27A42B9800F68EE1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B4C016E27A42B9800F68EE1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BFE2BD127A4034800056E24 /* Project object */;
 }
