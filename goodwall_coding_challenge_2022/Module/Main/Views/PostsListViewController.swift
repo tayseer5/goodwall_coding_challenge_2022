@@ -34,10 +34,10 @@ class PostsListViewController: ViewController {
                 switch error {
                 case .internetError(let message):
                     print(message)
-                    MessageView.sharedInstance.showOnView(message: message, theme: .error)
+                    MessageView.sharedInstance.showOnView(message: message, messageViewTheme: .error)
                 case .serverMessage(let message):
                     print(message)
-                   MessageView.sharedInstance.showOnView(message: message, theme: .warning)
+                   MessageView.sharedInstance.showOnView(message: message, messageViewTheme: .warning)
                 }
                 
             }).disposed(by: disposeBag)

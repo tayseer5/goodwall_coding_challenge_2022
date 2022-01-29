@@ -8,7 +8,7 @@
 import UIKit
 
 
-public enum Theme {
+public enum MessageViewTheme {
     case success
     case warning
     case error
@@ -42,12 +42,12 @@ class MessageView: UIView {
         containerView.frame = self.bounds
         containerView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
     }
-    func showOnView(message:String,theme:Theme){
+    func showOnView(message:String,messageViewTheme:MessageViewTheme){
         parentView = UIApplication.shared.keyWindow
         parentView.addSubview(self)
         addMaskView()
         messageLabel.text = message
-        applyTheme(theme: theme)
+        applyTheme(messageViewTheme: messageViewTheme)
         self.frame.size = CGSize(width: parentView.frame.width, height: 100)
         self.frame = CGRect(x: parentView.frame.minX, y: parentView.frame.minY - self.frame.height , width: self.frame.width, height: self.frame.height)
         parentView.bringSubviewToFront(self)
@@ -57,9 +57,9 @@ class MessageView: UIView {
         makeDim()
         hideTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(hideView), userInfo: nil, repeats: false)
     }
-    private func applyTheme(theme:Theme) {
+    private func applyTheme(messageViewTheme:MessageViewTheme) {
         var backgroundColor : UIColor
-        switch theme {
+        switch messageViewTheme {
         case .error:
             backgroundColor = UIColor(red: 249.0/255.0, green: 66.0/255.0, blue: 47.0/255.0, alpha: 1.0)
         case .success:
@@ -73,10 +73,8 @@ class MessageView: UIView {
         maskingView = UIView(frame: parentView.bounds)
         parentView.addSubview(maskingView)
         maskingView.backgroundColor = .clear
-        maskingView.addTapGestureRecognizer(action: { [weak self] in
-            guard let `self` = self else {return}
-            self.hideView()
-        })
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideView))
+        maskingView.addGestureRecognizer(tap)
         parentView.addSubview(maskingView)
         maskingView.fillToSuperView()
     }
