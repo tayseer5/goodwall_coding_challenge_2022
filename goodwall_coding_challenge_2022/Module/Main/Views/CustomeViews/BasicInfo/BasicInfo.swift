@@ -6,15 +6,15 @@
 //
 
 import UIKit
-import SwiftUI
 
 class BasicInfo: UIView {
+    // MARK: - IBOutLet
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainLabel: MainLabel!
     @IBOutlet weak var secondaryLabel: SecoundyLabel!
     @IBOutlet weak var extraLabel: SecoundyLabel!
-    
+    // MARK: - Init
     override init(frame: CGRect) {//constructor for programmatically init
         super.init(frame: frame)
         commonInit()
