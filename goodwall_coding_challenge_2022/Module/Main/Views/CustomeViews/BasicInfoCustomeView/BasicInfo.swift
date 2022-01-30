@@ -13,6 +13,8 @@ class BasicInfo: UIView {
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainLabel: MainLabel!
     @IBOutlet weak var secondaryLabel: SecoundyLabel!
+    @IBOutlet weak var firstIcon: IconImage!
+    @IBOutlet weak var secoundIcon: IconImage!
     @IBOutlet weak var extraLabel: SecoundyLabel!
     // MARK: - Init
     override init(frame: CGRect) {//constructor for programmatically init

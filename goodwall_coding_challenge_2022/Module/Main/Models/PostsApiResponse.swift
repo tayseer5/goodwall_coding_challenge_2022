@@ -90,6 +90,7 @@ struct Author: Codable {
     let about, displayName: String?
     let id: Int?
     let picture, pictureName: String?
+    let location:Location
 
     enum CodingKeys: String, CodingKey {
         case about
@@ -97,6 +98,7 @@ struct Author: Codable {
         case id
         case picture
         case pictureName = "picture_name"
+        case location
     }
 }
 // MARK: - Video
@@ -104,6 +106,16 @@ struct Videos: Codable {
     let videoUrl: String?
     enum CodingKeys: String, CodingKey {
         case videoUrl = "guid"
+    }
+}
+// MARK: - location
+struct Location: Codable {
+    let area: String?
+    let country: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case area = "admin_area_1"
+        case country
     }
 }
 

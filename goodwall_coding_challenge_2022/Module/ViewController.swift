@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var mediaInfoView: MediaInfo!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,15 +17,13 @@ class ViewController: UIViewController {
     }
 
     func test() {
-        let images: [UIImage] = [UIImage(named: "test")!,
-                                 UIImage(named: "waseet_app_icon_40")!,
-                                 UIImage(named: "test")!,
-                                 UIImage(named: "achivment")!,
-                                 UIImage(named: "goodWallPlaceHolder")!,
-                                 UIImage(named: "waseet_app_icon_40")!]
-        
-        mediaInfoView.mediaSlider.configure(with: images, view: mediaInfoView)
-        mediaInfoView.achivmetTitle.text = "Achievement"
+//        let imageUrls = ["/images/4628912/4628912-1639866308468-94952.jpg",
+//                         "/images/4628912/4628912-1643304472965-15682.jpg",
+//                         "/images/4628912/4628912-1639866308468-94952.jpg",
+//                         "/images/4628912/4628912-1643304472965-15682.jpg",]
+//        
+//        mediaInfoView.mediaSlider.configure(with: imageUrls)
+//        mediaInfoView.achivmetTitle.text = "Achievement"
         
         
     }
