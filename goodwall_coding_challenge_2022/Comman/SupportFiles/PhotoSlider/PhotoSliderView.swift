@@ -12,7 +12,7 @@ class PhotoSliderView: UIView {
 
     // MARK: Configure Methods
     
-    func configure(with images: [UIImage], view: UIView) {
+    func configure(with imagesUrls: [String]) {
         
         // Get the scrollView width and height
         let scrollViewWidth: CGFloat = scrollView.frame.width
@@ -20,23 +20,23 @@ class PhotoSliderView: UIView {
         let scrollViewHeight: CGFloat = scrollView.frame.height
         
         // Loop through all of the images and add them all to the scrollView
-        for (index, image) in images.enumerated() {
+        for (index, url) in imagesUrls.enumerated() {
             let imageView = UIImageView(frame: CGRect(x: scrollViewWidth * CGFloat(index),
                                                       y: 0,
                                                       width: scrollViewWidth ,
                                                       height: scrollViewHeight))
-            imageView.image = image
+            imageView.loadImageFrom(url: url)
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             scrollView.addSubview(imageView)
         }
         
         // Set the scrollView contentSize
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(images.count),
+        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(imagesUrls.count),
                                         height: scrollView.frame.height)
         
         // Ensure that the pageControl knows the number of pages
-        pageControl.numberOfPages = images.count
+        pageControl.numberOfPages = imagesUrls.count
     }
     
     // MARK: Init Methods
