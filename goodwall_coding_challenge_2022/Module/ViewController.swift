@@ -9,13 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mediaInfoView: MediaInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        test()
     }
 
-    @IBAction func test(_ sender: Any) {
-        getMostPopularMovies()
+    func test() {
+        let images: [UIImage] = [UIImage(named: "test")!,
+                                 UIImage(named: "waseet_app_icon_40")!,
+                                 UIImage(named: "test")!,
+                                 UIImage(named: "achivment")!,
+                                 UIImage(named: "goodWallPlaceHolder")!,
+                                 UIImage(named: "waseet_app_icon_40")!]
+        
+        mediaInfoView.mediaSlider.configure(with: images, view: mediaInfoView)
+        mediaInfoView.achivmetTitle.text = "Achievement"
+        
+        
     }
     // MARK: Helping Functions
       // Api Call for Movieslist

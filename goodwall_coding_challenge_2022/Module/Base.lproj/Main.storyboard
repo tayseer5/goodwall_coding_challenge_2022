@@ -16,22 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJf-he-wGC" customClass="BasicInfo" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
-                                <rect key="frame" x="57" y="373" width="300" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJf-he-wGC" customClass="MediaInfo" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="9GT-Pn-IbE"/>
-                                    <constraint firstAttribute="height" constant="150" id="Hif-aX-bcq"/>
+                                    <constraint firstAttribute="width" secondItem="mJf-he-wGC" secondAttribute="height" multiplier="1:1" id="RBS-lp-Zxi"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mJf-he-wGC" secondAttribute="trailing" id="4FP-v0-s6S"/>
                             <constraint firstItem="mJf-he-wGC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DO6-Mw-Xdj"/>
+                            <constraint firstItem="mJf-he-wGC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U12-h8-sRd"/>
                             <constraint firstItem="mJf-he-wGC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="keR-pd-fvU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mediaInfoView" destination="mJf-he-wGC" id="D8z-ap-NBz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
