@@ -32,6 +32,7 @@ class PostTableViewCell: UITableViewCell {
     // MARK: - handling design functions
     func handlingUI () {
         handlingBasicInfoView()
+        handlingMediaView()
     }
     func handlingBasicInfoView () {
         basicInfoView.mainImage.loadImageFrom(url: post?.item?.author?.picture ?? "")
@@ -42,6 +43,29 @@ class PostTableViewCell: UITableViewCell {
         basicInfoView.secoundIcon.image = UIImage(named: "Dot")
     }
     func handlingMediaView () {
+        let media = handlingMediaData()
+        mediaInfoView.mediaSlider.configure(with: media)
+        if let category = post?.item?.category {
+        mediaInfoView.achivmetTitle.text = category
+        } else {
+            mediaInfoView.achivmentView.isHidden = true
+        }
+    }
+    // MARK: - handling Data
+    func handlingMediaData()->[String]{
+        var media:[String] = []
+        media.append(contentsOf:  post?.item?.pictureNames ?? [])
+        if let videos = post?.item?.videos, videos.count > 0{
+            var videosUrl: [String] = []
+            let test = videos.map({ (video: Videos) in
+                videosUrl.append(contentsOf: video.urls?.thumbnailUrls ?? [])
+            
+            //self.thumbnailUrls(video: video)
+        })
+            print(test)
+            media.append(contentsOf:  videosUrl)
+        }
         
+        return media
     }
 }

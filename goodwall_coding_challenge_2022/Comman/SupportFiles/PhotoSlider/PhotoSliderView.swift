@@ -37,6 +37,11 @@ class PhotoSliderView: UIView {
         
         // Ensure that the pageControl knows the number of pages
         pageControl.numberOfPages = imagesUrls.count
+        
+        if imagesUrls.count == 1 {
+            pageControl.isHidden = true
+            scrollView.isScrollEnabled = false
+        }
     }
     
     // MARK: Init Methods

@@ -104,8 +104,19 @@ struct Author: Codable {
 // MARK: - Video
 struct Videos: Codable {
     let videoUrl: String?
+    let urls: Urls?
     enum CodingKeys: String, CodingKey {
         case videoUrl = "guid"
+        case urls
+    }
+}
+// MARK: - Urls
+struct Urls: Codable {
+    let videoUrl, thumbnailUrls: [String]?
+
+    enum CodingKeys: String, CodingKey {
+        case videoUrl = "mp4_urls"
+        case thumbnailUrls = "thumbnail_urls"
     }
 }
 // MARK: - location
