@@ -28,9 +28,6 @@ class MediaInfo: UIView {
         achivmetTitle.textColor = .white
         achivmentImage.backgroundColor = ThemeManager.currentTheme().secondaryColor
         contentView.fixInView(self)
-//        addSubview(contentView)
-//        contentView.frame = self.bounds
-//        contentView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
     }
     
 }

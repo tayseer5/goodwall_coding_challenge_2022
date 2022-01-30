@@ -7,7 +7,24 @@
 
 import Foundation
 import UIKit
+// MARK: - HeaderLabel
+@IBDesignable class HeaderLabel: UILabel {
+    required init?(coder aDecoder:NSCoder) {
+            super.init(coder:aDecoder)
+        commanInit()
+        }
 
+        override init(frame:CGRect) {
+            super.init(frame:frame)
+            commanInit()
+        }
+    private func commanInit(){
+        self.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+        self.textColor = ThemeManager.currentTheme().titleTextColor
+        
+    }
+}
+// MARK: - MainLabel
 @IBDesignable class MainLabel: UILabel {
     required init?(coder aDecoder:NSCoder) {
             super.init(coder:aDecoder)
@@ -24,6 +41,7 @@ import UIKit
         
     }
 }
+// MARK: - SecoundyLabel
 @IBDesignable class SecoundyLabel: UILabel {
     required init?(coder aDecoder:NSCoder) {
             super.init(coder:aDecoder)
@@ -37,6 +55,23 @@ import UIKit
     private func commanInit(){
         self.font = UIFont.systemFont(ofSize: 17)
         self.textColor = ThemeManager.currentTheme().subtitleTextColor
+        
+    }
+}
+// MARK: - DescriptionLabel
+@IBDesignable class DescriptionLabel: UILabel {
+    required init?(coder aDecoder:NSCoder) {
+            super.init(coder:aDecoder)
+        commanInit()
+        }
+
+        override init(frame:CGRect) {
+            super.init(frame:frame)
+            commanInit()
+        }
+    private func commanInit(){
+        self.font = UIFont.systemFont(ofSize: 17)
+        self.textColor = ThemeManager.currentTheme().titleTextColor
         
     }
 }
