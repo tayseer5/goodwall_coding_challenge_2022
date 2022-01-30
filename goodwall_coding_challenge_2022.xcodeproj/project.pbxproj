@@ -37,6 +37,10 @@
 		8B5129A227A5DAFF0085F893 /* PhotoSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5129A027A5DAFF0085F893 /* PhotoSliderView.xib */; };
 		8B5129A527A67AC70085F893 /* FullDescrptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5129A427A67AC70085F893 /* FullDescrptionsView.swift */; };
 		8B5129A727A67AD10085F893 /* FullDescrptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5129A627A67AD10085F893 /* FullDescrptionsView.xib */; };
+		8B5129AB27A681A80085F893 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5129A927A681A80085F893 /* CommentsTableViewCell.swift */; };
+		8B5129AC27A681A80085F893 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5129AA27A681A80085F893 /* CommentsTableViewCell.xib */; };
+		8B5129B027A68AD00085F893 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5129AE27A68AD00085F893 /* TagCollectionViewCell.swift */; };
+		8B5129B127A68AD00085F893 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5129AF27A68AD00085F893 /* TagCollectionViewCell.xib */; };
 		8BC8532F27A4A9D50056C77A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8532E27A4A9D50056C77A /* ThemeManager.swift */; };
 		8BC8533127A4ABB80056C77A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8533027A4ABB80056C77A /* UIColor+Extensions.swift */; };
 		8BC8533427A4B5D70056C77A /* labelDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8533327A4B5D70056C77A /* labelDesignable.swift */; };
@@ -95,6 +99,10 @@
 		8B5129A027A5DAFF0085F893 /* PhotoSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoSliderView.xib; sourceTree = "<group>"; };
 		8B5129A427A67AC70085F893 /* FullDescrptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDescrptionsView.swift; sourceTree = "<group>"; };
 		8B5129A627A67AD10085F893 /* FullDescrptionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullDescrptionsView.xib; sourceTree = "<group>"; };
+		8B5129A927A681A80085F893 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		8B5129AA27A681A80085F893 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
+		8B5129AE27A68AD00085F893 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B5129AF27A68AD00085F893 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		8BC8532E27A4A9D50056C77A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		8BC8533027A4ABB80056C77A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		8BC8533327A4B5D70056C77A /* labelDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = labelDesignable.swift; sourceTree = "<group>"; };
@@ -280,6 +288,8 @@
 		8B4C01A427A47C5E00F68EE1 /* CustomeViews */ = {
 			isa = PBXGroup;
 			children = (
+				8B5129AD27A68AA00085F893 /* TagsCollectionViewCell */,
+				8B5129A827A681660085F893 /* CommentTableViewCell */,
 				8B5129A327A67A3B0085F893 /* DescriptionCustomeView */,
 				8BC8533D27A546090056C77A /* MediaInfoCustomeView */,
 				8BC8533C27A545F90056C77A /* BasicInfoCustomeView */,
@@ -303,6 +313,24 @@
 				8B5129A627A67AD10085F893 /* FullDescrptionsView.xib */,
 			);
 			path = DescriptionCustomeView;
+			sourceTree = "<group>";
+		};
+		8B5129A827A681660085F893 /* CommentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8B5129A927A681A80085F893 /* CommentsTableViewCell.swift */,
+				8B5129AA27A681A80085F893 /* CommentsTableViewCell.xib */,
+			);
+			path = CommentTableViewCell;
+			sourceTree = "<group>";
+		};
+		8B5129AD27A68AA00085F893 /* TagsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8B5129AE27A68AD00085F893 /* TagCollectionViewCell.swift */,
+				8B5129AF27A68AD00085F893 /* TagCollectionViewCell.xib */,
+			);
+			path = TagsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		8BC8532D27A4A9BE0056C77A /* Theme */ = {
@@ -513,10 +541,12 @@
 				8B5129A727A67AD10085F893 /* FullDescrptionsView.xib in Resources */,
 				8B4C019A27A46F6400F68EE1 /* LoadingView.xib in Resources */,
 				8B4C01A027A4724F00F68EE1 /* MessageView.xib in Resources */,
+				8B5129B127A68AD00085F893 /* TagCollectionViewCell.xib in Resources */,
 				8B5129A227A5DAFF0085F893 /* PhotoSliderView.xib in Resources */,
 				8B4C01A827A47FD500F68EE1 /* BasicInfoView.xib in Resources */,
 				8BFE2BE927A4034D00056E24 /* LaunchScreen.storyboard in Resources */,
 				8BFE2BE627A4034D00056E24 /* Assets.xcassets in Resources */,
+				8B5129AC27A681A80085F893 /* CommentsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +587,8 @@
 				8BFE2BDF27A4034800056E24 /* SceneDelegate.swift in Sources */,
 				8BC8533827A4BF110056C77A /* UiImageViewDesignable.swift in Sources */,
 				8BC8533F27A546680056C77A /* MediaInfo.swift in Sources */,
+				8B5129AB27A681A80085F893 /* CommentsTableViewCell.swift in Sources */,
+				8B5129B027A68AD00085F893 /* TagCollectionViewCell.swift in Sources */,
 				8B4C018927A45D7300F68EE1 /* PostsApiResponse.swift in Sources */,
 				8B4C018C27A45DBB00F68EE1 /* PostsListViewModel.swift in Sources */,
 				8B4C016D27A429B400F68EE1 /* UIImageView+Extensions.swift in Sources */,
