@@ -33,6 +33,7 @@ class PostTableViewCell: UITableViewCell {
     func handlingUI () {
         handlingBasicInfoView()
         handlingMediaView()
+        handlingFullDescriptionView()
     }
     func handlingBasicInfoView () {
         basicInfoView.mainImage.loadImageFrom(url: post?.item?.author?.picture ?? "")
@@ -50,6 +51,11 @@ class PostTableViewCell: UITableViewCell {
         } else {
             mediaInfoView.achivmentView.isHidden = true
         }
+    }
+    func handlingFullDescriptionView(){
+        fullDescriptionView.titleLabel.text = post?.item?.title
+        fullDescriptionView.summeryDescrptionsLabel.text = post?.item?.body
+        
     }
     // MARK: - handling Data
     func handlingMediaData()->[String]{

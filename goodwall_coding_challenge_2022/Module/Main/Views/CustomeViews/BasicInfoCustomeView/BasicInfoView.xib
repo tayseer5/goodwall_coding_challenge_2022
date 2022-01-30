@@ -62,6 +62,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="hh9-4k-xUQ" firstAttribute="top" secondItem="cLE-cq-lOr" secondAttribute="top" id="G5E-yz-gxM"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xn4-DL-XLQ" secondAttribute="bottom" id="HL5-TW-5iH"/>
                 <constraint firstItem="Ae5-fF-3wQ" firstAttribute="centerY" secondItem="KfM-ve-8kf" secondAttribute="centerY" id="Hfr-cJ-f3z"/>
                 <constraint firstItem="wo3-Ct-9GG" firstAttribute="trailing" secondItem="Wh7-xs-e0a" secondAttribute="trailing" id="IVU-aE-chd"/>
                 <constraint firstItem="xn4-DL-XLQ" firstAttribute="leading" secondItem="wo3-Ct-9GG" secondAttribute="leading" id="IiM-qk-J3W"/>

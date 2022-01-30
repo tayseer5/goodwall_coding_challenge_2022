@@ -18,28 +18,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-XO-N0I" customClass="BasicInfo" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
-                        <rect key="frame" x="22" y="2" width="424" height="100"/>
+                        <rect key="frame" x="22" y="2" width="424" height="120"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="pIY-0Z-LNX"/>
+                            <constraint firstAttribute="height" constant="120" id="pIY-0Z-LNX"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTr-cr-cGB" customClass="MediaInfo" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
-                        <rect key="frame" x="22" y="112" width="424" height="300"/>
+                        <rect key="frame" x="22" y="132" width="424" height="300"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="300" id="XDn-OZ-xka"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3t3-Cw-OGG" customClass="FullDescrptionsView" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
-                        <rect key="frame" x="22" y="422" width="424" height="200"/>
+                        <rect key="frame" x="22" y="442" width="424" height="190"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="qHG-kP-xQZ"/>
+                            <constraint firstAttribute="height" constant="190" id="qHG-kP-xQZ"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDZ-ev-3mb">
-                        <rect key="frame" x="22" y="632" width="424" height="163"/>
+                        <rect key="frame" x="22" y="642" width="424" height="153"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
