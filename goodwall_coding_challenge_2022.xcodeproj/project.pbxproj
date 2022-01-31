@@ -43,6 +43,7 @@
 		8B5129B127A68AD00085F893 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5129AF27A68AD00085F893 /* TagCollectionViewCell.xib */; };
 		8B5129B727A690B00085F893 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5129B527A690B00085F893 /* PostTableViewCell.swift */; };
 		8B5129B827A690B00085F893 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B5129B627A690B00085F893 /* PostTableViewCell.xib */; };
+		8B5129BC27A722C30085F893 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5129BB27A722C30085F893 /* String+Extention.swift */; };
 		8BC8532F27A4A9D50056C77A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8532E27A4A9D50056C77A /* ThemeManager.swift */; };
 		8BC8533127A4ABB80056C77A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8533027A4ABB80056C77A /* UIColor+Extensions.swift */; };
 		8BC8533427A4B5D70056C77A /* labelDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC8533327A4B5D70056C77A /* labelDesignable.swift */; };
@@ -107,6 +108,7 @@
 		8B5129AF27A68AD00085F893 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		8B5129B527A690B00085F893 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		8B5129B627A690B00085F893 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		8B5129BB27A722C30085F893 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		8BC8532E27A4A9D50056C77A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		8BC8533027A4ABB80056C77A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		8BC8533327A4B5D70056C77A /* labelDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = labelDesignable.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				8B4C019127A46E7D00F68EE1 /* ReactiveExtensiones.swift */,
 				8B4C01A227A4746C00F68EE1 /* UIView+Extentions.swift */,
 				8BC8533027A4ABB80056C77A /* UIColor+Extensions.swift */,
+				8B5129BB27A722C30085F893 /* String+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				8B4C019C27A46F6400F68EE1 /* loadingView.swift in Sources */,
 				8BC8532F27A4A9D50056C77A /* ThemeManager.swift in Sources */,
 				8B4C016927A428B500F68EE1 /* Constants.swift in Sources */,
+				8B5129BC27A722C30085F893 /* String+Extention.swift in Sources */,
 				8B4C01A627A47FBF00F68EE1 /* BasicInfo.swift in Sources */,
 				8BFE2BDF27A4034800056E24 /* SceneDelegate.swift in Sources */,
 				8BC8533827A4BF110056C77A /* UiImageViewDesignable.swift in Sources */,

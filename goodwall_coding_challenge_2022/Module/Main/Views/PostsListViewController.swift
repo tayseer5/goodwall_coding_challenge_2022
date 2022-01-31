@@ -27,8 +27,6 @@ class PostsListViewController: ViewController {
         let postTableViewCell = UINib(nibName: "PostTableViewCell",
                                           bundle: nil)
         postsTableView.register(postTableViewCell , forCellReuseIdentifier: "postCell")
-        
-        
     }
     private func setupBindings() {
         // binding loading to vc
@@ -56,6 +54,7 @@ class PostsListViewController: ViewController {
                     .rx
                     .items(cellIdentifier: "postCell", cellType: PostTableViewCell.self)){ (row,post,cell) in
                 //binding cell data
+                
                 cell.post = post
             }.disposed(by: disposeBag)
         //handling delegate
@@ -103,7 +102,7 @@ class PostsListViewController: ViewController {
 }
 extension PostsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 610
+        return UITableView.automaticDimension
         
     }
 }

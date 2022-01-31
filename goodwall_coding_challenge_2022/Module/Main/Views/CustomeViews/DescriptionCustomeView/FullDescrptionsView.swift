@@ -24,6 +24,7 @@ class FullDescrptionsView: UIView {
     func commonInit(){
        Bundle.main.loadNibNamed("FullDescrptionsView", owner: self, options: nil)
         contentView.fixInView(self)
+        
     }
     
 }
