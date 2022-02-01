@@ -13,9 +13,10 @@ struct PostDetailsViewModel {
 // MARK: - Subjects
 //subject is observable and observer
 public var post :Post?
-let comments = ["test","hello","test2","tayseer","test3","again","test4","back","test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf","isAllah test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf"]
+var comments = ["test","hello","test2","tayseer","test3","again","test4","back","test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf","isAllah test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf"]
 // MARK: - private Varibles
-    func saveNewComment(comment:String){
+    mutating func saveNewComment(comment:String){
+        comments.append(comment)
         
     }
 
