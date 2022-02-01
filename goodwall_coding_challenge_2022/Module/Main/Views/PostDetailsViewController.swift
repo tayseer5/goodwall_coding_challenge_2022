@@ -82,24 +82,8 @@ extension PostDetailsViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if textView.text.count > 0 {
             sendButton.isUserInteractionEnabled = true
-//            sendButton.isHidden = false
-//            sendButtomImage.isHidden = false
-//            tailingSpaceToView.priority = UILayoutPriority(rawValue: 250)
-//            tailingSpaceToView.isActive = false
-//            tailingSpaceToButton.priority = UILayoutPriority(rawValue: 750)
-//            tailingSpaceToButton.isActive = true
-//            self.view.updateConstraints()
-//            self.view.layoutIfNeeded()
       } else {
           sendButton.isUserInteractionEnabled = false
-//            tailingSpaceToButton.priority = UILayoutPriority(rawValue: 250)
-//            tailingSpaceToButton.isActive = false
-//            tailingSpaceToView.priority = UILayoutPriority(rawValue: 750)
-//            tailingSpaceToView.isActive = true
-//            sendButton.isHidden = true
-//            sendButtomImage.isHidden = true
-//            self.view.updateConstraints()
-//            self.view.layoutIfNeeded()
         }
         return true
     }
