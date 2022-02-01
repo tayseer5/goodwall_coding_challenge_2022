@@ -29,11 +29,16 @@ struct Response: Codable {
 
 // MARK: - Payload
 struct Payload: Codable {
-    let entries: [Entry]?
+    let posts: [Post]?
+    
+    enum CodingKeys: String, CodingKey {
+        case posts = "entries"
+    }
 }
 
+
 // MARK: - Entry
-struct Entry: Codable {
+struct Post: Codable {
     let contentType: String?
     let item: Item?
 
@@ -85,6 +90,7 @@ struct Author: Codable {
     let about, displayName: String?
     let id: Int?
     let picture, pictureName: String?
+    let location:Location
 
     enum CodingKeys: String, CodingKey {
         case about
@@ -92,13 +98,35 @@ struct Author: Codable {
         case id
         case picture
         case pictureName = "picture_name"
+        case location
     }
 }
 // MARK: - Video
 struct Videos: Codable {
     let videoUrl: String?
+    let urls: Urls?
     enum CodingKeys: String, CodingKey {
         case videoUrl = "guid"
+        case urls
+    }
+}
+// MARK: - Urls
+struct Urls: Codable {
+    let videoUrl, thumbnailUrls: [String]?
+
+    enum CodingKeys: String, CodingKey {
+        case videoUrl = "mp4_urls"
+        case thumbnailUrls = "thumbnail_urls"
+    }
+}
+// MARK: - location
+struct Location: Codable {
+    let area: String?
+    let country: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case area = "admin_area_1"
+        case country
     }
 }
 

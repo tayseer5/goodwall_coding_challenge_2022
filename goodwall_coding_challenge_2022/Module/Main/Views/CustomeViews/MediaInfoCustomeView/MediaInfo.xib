@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MediaInfo" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+            <connections>
+                <outlet property="achivmentImage" destination="3bp-Ux-cNX" id="Uzj-Jh-pgL"/>
+                <outlet property="achivmentView" destination="LlN-cy-ei5" id="Bjl-mE-yh3"/>
+                <outlet property="achivmetTitle" destination="xHO-D7-Dz8" id="ElR-Fr-Rha"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="VEE-6L-mmy"/>
+                <outlet property="mediaSlider" destination="KE7-nf-bwZ" id="VSi-tu-Gv5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KE7-nf-bwZ" customClass="PhotoSliderView" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LlN-cy-ei5">
+                    <rect key="frame" x="20" y="20" width="150.5" height="40"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="achivment" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-Ux-cNX" customClass="IconImage" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                            <color key="backgroundColor" red="0.24313725489999999" green="0.94117647059999998" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="kpr-l3-v6t"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHO-D7-Dz8">
+                            <rect key="frame" x="35" y="0.0" width="110.5" height="40"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                            <color key="textColor" red="0.98661334109999999" green="0.98661334109999999" blue="0.98661334109999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3bp-Ux-cNX" firstAttribute="top" secondItem="LlN-cy-ei5" secondAttribute="top" id="6dU-Ak-y3K"/>
+                        <constraint firstAttribute="bottom" secondItem="3bp-Ux-cNX" secondAttribute="bottom" id="8Qa-4P-y3c"/>
+                        <constraint firstItem="xHO-D7-Dz8" firstAttribute="top" secondItem="LlN-cy-ei5" secondAttribute="top" id="Hx5-rs-AdE"/>
+                        <constraint firstAttribute="trailing" secondItem="xHO-D7-Dz8" secondAttribute="trailing" constant="5" id="KsU-3O-94s"/>
+                        <constraint firstAttribute="bottom" secondItem="xHO-D7-Dz8" secondAttribute="bottom" id="Ra4-AL-Nyd"/>
+                        <constraint firstItem="xHO-D7-Dz8" firstAttribute="centerY" secondItem="3bp-Ux-cNX" secondAttribute="centerY" id="TTX-Ez-y7u"/>
+                        <constraint firstItem="xHO-D7-Dz8" firstAttribute="leading" secondItem="3bp-Ux-cNX" secondAttribute="trailing" constant="5" id="VfP-YJ-gMa"/>
+                        <constraint firstAttribute="height" constant="40" id="ZDl-hr-HmA"/>
+                        <constraint firstItem="3bp-Ux-cNX" firstAttribute="leading" secondItem="LlN-cy-ei5" secondAttribute="leading" id="vGm-d1-36a"/>
+                        <constraint firstItem="3bp-Ux-cNX" firstAttribute="centerY" secondItem="LlN-cy-ei5" secondAttribute="centerY" id="wYO-2F-X2t"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="LlN-cy-ei5" firstAttribute="leading" secondItem="KE7-nf-bwZ" secondAttribute="leading" constant="20" id="0cd-9l-It0"/>
+                <constraint firstItem="LlN-cy-ei5" firstAttribute="top" secondItem="KE7-nf-bwZ" secondAttribute="top" constant="20" id="D3r-TU-T0X"/>
+                <constraint firstAttribute="trailing" secondItem="KE7-nf-bwZ" secondAttribute="trailing" id="EH6-LP-RXb"/>
+                <constraint firstItem="KE7-nf-bwZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FSJ-9y-0rA"/>
+                <constraint firstItem="KE7-nf-bwZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eIA-Ku-FDj"/>
+                <constraint firstItem="KE7-nf-bwZ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="j7I-U5-UPc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-59.263392857142854"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="xHO-D7-Dz8">
+            <size key="intrinsicContentSize" width="110.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="achivment" width="18" height="18"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

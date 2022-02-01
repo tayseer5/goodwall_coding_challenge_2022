@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicInfo" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="KfM-ve-8kf" id="Tce-92-ig3"/>
+                <outlet property="extraLabel" destination="xn4-DL-XLQ" id="U8v-0H-dI6"/>
+                <outlet property="firstIcon" destination="cLE-cq-lOr" id="Bhx-Gn-LXM"/>
+                <outlet property="mainImage" destination="Ae5-fF-3wQ" id="341-Xe-2CN"/>
+                <outlet property="mainLabel" destination="Wh7-xs-e0a" id="aLW-d8-xhe"/>
+                <outlet property="secondaryLabel" destination="wo3-Ct-9GG" id="pkf-Pb-Dhf"/>
+                <outlet property="secoundIcon" destination="hh9-4k-xUQ" id="ScI-gG-cEW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KfM-ve-8kf">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="Ae5-fF-3wQ">
+                    <rect key="frame" x="1" y="13" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5ZF-rx-aD2"/>
+                        <constraint firstAttribute="width" secondItem="Ae5-fF-3wQ" secondAttribute="height" multiplier="1:1" id="nTp-7t-LXS"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wh7-xs-e0a" customClass="MainLabel" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                    <rect key="frame" x="61" y="10" width="274" height="20.5"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-cq-lOr" customClass="IconImage" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                    <rect key="frame" x="345" y="12.5" width="20" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Efv-9t-t24"/>
+                        <constraint firstAttribute="height" constant="20" id="SGU-Yh-1Ng"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hh9-4k-xUQ" customClass="IconImage" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                    <rect key="frame" x="379" y="15.5" width="20" height="19"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo3-Ct-9GG" customClass="SecoundyLabel" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                    <rect key="frame" x="61" y="37.5" width="274" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <color key="highlightedColor" red="0.24313725490196078" green="0.94117647058823528" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-DL-XLQ" customClass="SecoundyLabel" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
+                    <rect key="frame" x="61" y="65" width="274" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="hh9-4k-xUQ" firstAttribute="top" secondItem="cLE-cq-lOr" secondAttribute="top" id="G5E-yz-gxM"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xn4-DL-XLQ" secondAttribute="bottom" constant="3" id="HL5-TW-5iH"/>
+                <constraint firstItem="wo3-Ct-9GG" firstAttribute="trailing" secondItem="Wh7-xs-e0a" secondAttribute="trailing" id="IVU-aE-chd"/>
+                <constraint firstItem="xn4-DL-XLQ" firstAttribute="leading" secondItem="wo3-Ct-9GG" secondAttribute="leading" id="IiM-qk-J3W"/>
+                <constraint firstItem="cLE-cq-lOr" firstAttribute="leading" secondItem="wo3-Ct-9GG" secondAttribute="trailing" constant="10" id="LmK-9x-JwS"/>
+                <constraint firstItem="xn4-DL-XLQ" firstAttribute="top" secondItem="wo3-Ct-9GG" secondAttribute="bottom" constant="7" id="QqN-RU-Zgw"/>
+                <constraint firstItem="xn4-DL-XLQ" firstAttribute="trailing" secondItem="Wh7-xs-e0a" secondAttribute="trailing" id="UFT-Ch-W3N"/>
+                <constraint firstItem="cLE-cq-lOr" firstAttribute="top" secondItem="Wh7-xs-e0a" secondAttribute="top" constant="5" id="Zhg-LI-y77"/>
+                <constraint firstItem="hh9-4k-xUQ" firstAttribute="leading" secondItem="cLE-cq-lOr" secondAttribute="trailing" constant="14" id="aqz-hJ-nDc"/>
+                <constraint firstItem="Wh7-xs-e0a" firstAttribute="top" secondItem="Ae5-fF-3wQ" secondAttribute="top" constant="-3" id="bpK-lW-dqM"/>
+                <constraint firstItem="wo3-Ct-9GG" firstAttribute="top" secondItem="Wh7-xs-e0a" secondAttribute="bottom" constant="7" id="cs1-Ch-Xmb"/>
+                <constraint firstItem="hh9-4k-xUQ" firstAttribute="height" secondItem="cLE-cq-lOr" secondAttribute="height" id="elo-WV-oC7"/>
+                <constraint firstAttribute="trailing" secondItem="hh9-4k-xUQ" secondAttribute="trailing" constant="15" id="ink-Ub-OpJ"/>
+                <constraint firstItem="Wh7-xs-e0a" firstAttribute="top" secondItem="KfM-ve-8kf" secondAttribute="top" constant="10" id="jkg-Ry-WfU"/>
+                <constraint firstItem="hh9-4k-xUQ" firstAttribute="width" secondItem="cLE-cq-lOr" secondAttribute="width" id="kBo-OM-nAG"/>
+                <constraint firstItem="Wh7-xs-e0a" firstAttribute="leading" secondItem="Ae5-fF-3wQ" secondAttribute="trailing" constant="10" id="r2s-4H-alE"/>
+                <constraint firstItem="Ae5-fF-3wQ" firstAttribute="leading" secondItem="KfM-ve-8kf" secondAttribute="leading" constant="1" id="uDm-Wo-g8B"/>
+                <constraint firstItem="Wh7-xs-e0a" firstAttribute="leading" secondItem="wo3-Ct-9GG" secondAttribute="leading" id="xGr-qm-o8C"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-59.420289855072468" y="-543.75"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="Wh7-xs-e0a">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+        <designable name="cLE-cq-lOr">
+            <size key="intrinsicContentSize" width="23" height="20"/>
+        </designable>
+        <designable name="hh9-4k-xUQ">
+            <size key="intrinsicContentSize" width="20" height="20"/>
+        </designable>
+        <designable name="wo3-Ct-9GG">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+        <designable name="xn4-DL-XLQ">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <image name="test" width="1333.3333740234375" height="885.33331298828125"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
