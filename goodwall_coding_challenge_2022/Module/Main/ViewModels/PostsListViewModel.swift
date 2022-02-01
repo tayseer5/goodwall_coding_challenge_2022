@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import RxRelay
 import RxCocoa
+import UIKit
 
 struct PostsListViewModel {
     // MARK: - Subjects
@@ -16,6 +17,7 @@ struct PostsListViewModel {
     public let posts : PublishSubject<[Post]> = PublishSubject()
     public let loading: PublishSubject<Bool> = PublishSubject()
     public let error : PublishSubject<NetworkCallErrors> = PublishSubject()
+    public let pushedViewController : PublishSubject<UIViewController> = PublishSubject()
     // MARK: - private Varibles
     private var apiService: NetworkManager?
     
@@ -24,7 +26,11 @@ struct PostsListViewModel {
         self.apiService = NetworkManager()
         getPosts()
     }
-    
+    //MARK: - public Function
+    func selectItem(post:Post){
+        handlingPushedView(post: post)
+    }
+    //MARK: - private Function
     private func getPosts(){
         self.loading.onNext(true)
         apiService?.getGoodWallPosts() { result in
@@ -43,5 +49,15 @@ struct PostsListViewModel {
             }
         }
     }
+    private func handlingPushedView(post:Post){
+        let postDetailsModel = PostDetailsViewModel(posts: post)
+        if let postDetailsViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PostDetailsViewController") as? PostDetailsViewController{
+            postDetailsViewController.postDetailsViewModel = postDetailsModel
+            self.pushedViewController.onNext(postDetailsViewController)
+        }
+        
+    }
+    
+    
 
 }

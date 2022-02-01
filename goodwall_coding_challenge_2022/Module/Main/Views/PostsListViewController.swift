@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 import RxCocoa
 import RxSwift
+import CoreMIDI
 
-class PostsListViewController: ViewController {
+class PostsListViewController: UIViewController {
     // MARK: - IBOutLet
     @IBOutlet weak var postsTableView: UITableView!
     // MARK: - Varibles
@@ -54,7 +55,6 @@ class PostsListViewController: ViewController {
                     .rx
                     .items(cellIdentifier: "postCell", cellType: PostTableViewCell.self)){ (row,post,cell) in
                 //binding cell data
-                
                 cell.post = post
             }.disposed(by: disposeBag)
         //handling delegate
@@ -65,38 +65,36 @@ class PostsListViewController: ViewController {
         //handling didselect
         postsTableView
             .rx
-            .itemSelected
-            .subscribe(onNext:{ indexPath in
-                //your code
-                print(indexPath)
+            .modelSelected(Post.self)
+            .subscribe(onNext: { [weak self] item in
+                // other actions with Item object
+                self?.postsListViewModel.selectItem(post: item)
             }).disposed(by: disposeBag)
-            /*
+//        postsTableView
+//            .rx
+//            .itemSelected
+//            .subscribe(onNext:{ indexPath in
+//                //your code
+//
+//            }).disposed(by: disposeBag)
         
-//        albumsCollectionView.rx.willDisplayCell
-//            .subscribe(onNext: ({ (cell,indexPath) in
-//                cell.alpha = 0
-//                let transform = CATransform3DTranslate(CATransform3DIdentity, 0, -250, 0)
-//                cell.layer.transform = transform
-//                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-//                    cell.alpha = 1
-//                    cell.layer.transform = CATransform3DIdentity
-//                }, completion: nil)
-//            })).disposed(by: disposeBag)
+        postsTableView.rx.willDisplayCell
+            .subscribe(onNext: ({ (cell,indexPath) in
+                //cell.alpha = 0
+                let transform = CATransform3DTranslate(CATransform3DIdentity, 0, -250, 0)
+                //cell.layer.transform = transform
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    (cell as? PostTableViewCell)?.handlingViewHight()
+                    //cell.alpha = 1
+                   // cell.layer.transform = CATransform3DIdentity
+                }, completion: nil)
+            })).disposed(by: disposeBag)
         
-        albumsCollectionView
-            .rx
-            .itemSelected
-                .subscribe(onNext:{ indexPath in
-                    //your code
-                    print(indexPath)
-                }).disposed(by: disposeBag)
-        
-//                    .albums
-//                    .observeOn(MainScheduler.instance)
-//                    .bind(to: albumsViewController.albums)
-//                    .disposed(by: disposeBag)
-        */
-        
+        postsListViewModel
+            .pushedViewController
+            .subscribe(onNext: { (viewController) in
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }).disposed(by: disposeBag)
         
     }
 }
