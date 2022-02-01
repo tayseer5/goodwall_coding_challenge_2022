@@ -11,7 +11,12 @@ import RxSwift
 
 class PostDetailsViewController: UIViewController {
     // MARK: - IBOutLet
+    @IBOutlet weak var sendButtomImage: UIImageView!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var postDetailsTableview: UITableView!
+    @IBOutlet weak var tailingSpaceToView: NSLayoutConstraint!
+    @IBOutlet weak var tailingSpaceToButton: NSLayoutConstraint!
+    @IBOutlet weak var commentTextView: UITextView!
     // MARK: - Varibles
     var postDetailsViewModel = PostDetailsViewModel()
     var disposeBag = DisposeBag()
@@ -19,6 +24,7 @@ class PostDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
+        commentTextView.delegate = self
     }
     // MARK: - Helping Function
     private func prepareTableView() {
@@ -30,6 +36,9 @@ class PostDetailsViewController: UIViewController {
         postDetailsTableview.register(commentsTableViewCell , forCellReuseIdentifier: "commentsCell")
         postDetailsTableview.delegate = self
         postDetailsTableview.dataSource = self
+    }
+    @IBAction func sendComment(_ sender: Any) {
+        
     }
 }
 // MARK: - UITableViewDataSource extension
@@ -68,4 +77,31 @@ extension PostDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+}
+extension PostDetailsViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView.text.count > 0 {
+            sendButton.isUserInteractionEnabled = true
+//            sendButton.isHidden = false
+//            sendButtomImage.isHidden = false
+//            tailingSpaceToView.priority = UILayoutPriority(rawValue: 250)
+//            tailingSpaceToView.isActive = false
+//            tailingSpaceToButton.priority = UILayoutPriority(rawValue: 750)
+//            tailingSpaceToButton.isActive = true
+//            self.view.updateConstraints()
+//            self.view.layoutIfNeeded()
+      } else {
+          sendButton.isUserInteractionEnabled = false
+//            tailingSpaceToButton.priority = UILayoutPriority(rawValue: 250)
+//            tailingSpaceToButton.isActive = false
+//            tailingSpaceToView.priority = UILayoutPriority(rawValue: 750)
+//            tailingSpaceToView.isActive = true
+//            sendButton.isHidden = true
+//            sendButtomImage.isHidden = true
+//            self.view.updateConstraints()
+//            self.view.layoutIfNeeded()
+        }
+        return true
+    }
+
 }
