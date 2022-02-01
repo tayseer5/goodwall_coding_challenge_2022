@@ -12,9 +12,9 @@ class TagCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tagLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.borderWidth = 1
+        contentView.layer.borderWidth = 2
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 3
+        contentView.layer.cornerRadius = self.frame.size.width / 15
         contentView.layer.borderColor = UIColor.black.cgColor
         // Initialization code
     }

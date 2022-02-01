@@ -41,6 +41,9 @@ class PhotoSliderView: UIView {
         if imagesUrls.count == 1 {
             pageControl.isHidden = true
             scrollView.isScrollEnabled = false
+        } else {
+            pageControl.isHidden = false
+            scrollView.isScrollEnabled = true
         }
     }
     

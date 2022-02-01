@@ -22,26 +22,38 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var tagViewHight: NSLayoutConstraint!
     @IBOutlet weak var commentsViewHight: NSLayoutConstraint!
     // MARK: - Varibles
-    public var post: Post?{
+    public var post: Post?
+    {
         didSet {
-            if post != nil {
+            if oldValue?.item?.id !=  post?.item?.id{
                 handlingUI()
+                commentsTableView.reloadData()
+                tagCollectionView.reloadData()
             }
         }
     }
-    var lastComments: BehaviorRelay<[String]> = BehaviorRelay(value: [])
-    var hashTagsSubject: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var lastComments: [String]?
+    var hashTagsVaribles: [String]?
     var disposeBag = DisposeBag()
     // MARK: - override functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        handlingCommentsTable()
+        handlingTagsCollectionView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    override func prepareForReuse() {
+        lastComments = nil
+        hashTagsVaribles = nil
+        commentsTableView.reloadData()
+        tagCollectionView.reloadData()
+        
     }
     // MARK: - handling design functions
     func handlingUI () {
@@ -62,6 +74,7 @@ class PostTableViewCell: UITableViewCell {
         let media = handlingMediaData()
         mediaInfoView.mediaSlider.configure(with: media)
         if let category = post?.item?.category {
+            mediaInfoView.achivmentView.isHidden = false
         mediaInfoView.achivmetTitle.text = category
         } else {
             mediaInfoView.achivmentView.isHidden = true
@@ -73,69 +86,59 @@ class PostTableViewCell: UITableViewCell {
         
     }
     func handlingViewHight() {
-        var viewHight = commentsAndTagHight.constant
+        //var tagViewHightValue = 0.0
+        //var commentViewHightValue = 0.0
+        //var commentsAndTagHightValue = 0.0
         if let hashTags = post?.item?.hashtags , hashTags.count > 0 {
-            hashTagsSubject.accept(hashTags)
-            handlingTagsCollectionView()
+            commentsAndTagHight.constant = 75.0
+            //tagCollectionView.isHidden = false
+            hashTagsVaribles = hashTags
+            tagCollectionView.reloadData()
             
         } else {
-            tagViewHight.constant = 0
-            tagCollectionView.isHidden = true
-            viewHight -= 75
+            commentsAndTagHight.constant = 25.0
+            //tagCollectionView.isHidden = true
         }
-        let comments = ["test","hello","test2","tayseer","test3","again","test4","back","test5","isAllah"]
+        commentsAndTagView.layoutIfNeeded()
+        commentsAndTagView.updateConstraints()
+       
+        let comments = ["test","hello","test2","tayseer","test3","again","test4","back","test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf","isAllah test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf"]
         if !(comments.count > 0) {
-            commentsViewHight.constant = 0
-            commentsTableView.isHidden = true
+            commentsViewHight.constant = 1
+            //commentsTableView.isHidden = true
             numberOfCommetsLabel.text = "0 Comments"
-            viewHight -= 190
         } else {
+            //commentsTableView.isHidden = false
             numberOfCommetsLabel.text = "\(comments.count) Comments"
-           // handlingCommentsTable()
-            viewHight -= 190
-            if comments.count == 2 {
-                viewHight += 190
+            lastComments = comments.count > 2 ? [comments[comments.count - 1],comments[comments.count - 2]]: [comments[comments.count - 1]]
+            if lastComments?.count == 2 {
+                commentsViewHight.constant = 140
             }else {
-                viewHight += 80
+                commentsViewHight.constant = 70
             }
-            lastComments.accept( comments.count > 2 ? [comments[comments.count - 1],comments[comments.count - 2]]: [comments[comments.count - 1]])
+            commentsTableView.reloadData()
         }
+        commentsAndTagView.layoutIfNeeded()
+        commentsAndTagView.updateConstraints()
+        commentsTableView.layoutIfNeeded()
+        commentsTableView.updateConstraints()
+        self.contentView.layoutIfNeeded()
+        self.contentView.updateConstraints()
     }
     func handlingCommentsTable () {
         let commentsTableViewCell = UINib(nibName: "CommentsTableViewCell",
                                           bundle: nil)
         commentsTableView.register(commentsTableViewCell , forCellReuseIdentifier: "commentsCell")
         //90 + 90 = 180
-        // binding posts to posts container
-        lastComments
-            .bind(to: commentsTableView
-                    .rx
-                    .items(cellIdentifier: "commentsCell", cellType: CommentsTableViewCell.self)){ (row,comment,cell) in
-               // cell.commentLabel.text = comment
-                //binding cell data
-            }.disposed(by: disposeBag)
-        //handling delegate
-//        commentsTableView
-//            .rx
-//            .setDelegate(self)
-//            .disposed(by: disposeBag)
+        commentsTableView.dataSource = self
+       
     }
     func handlingTagsCollectionView () {
         if let flowLayout = tagCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
               flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
             }
-        //preferredLayoutAttributesFittingAttributes
         tagCollectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tagCell")
-        // binding posts to posts container
-        hashTagsSubject
-            .bind(to: tagCollectionView
-                    .rx
-                    .items(cellIdentifier: "tagCell", cellType: TagCollectionViewCell.self)){ (row,tag,cell) in
-                //binding cell data
-                //print("tayseer")
-               // print(tag)
-               // cell.tagLabel.text = tag
-            }.disposed(by: disposeBag)
+        tagCollectionView.dataSource = self
     }
     // MARK: - handling Data
     func handlingMediaData()->[String]{
@@ -143,15 +146,38 @@ class PostTableViewCell: UITableViewCell {
         media.append(contentsOf:  post?.item?.pictureNames ?? [])
         if let videos = post?.item?.videos, videos.count > 0{
             var videosUrl: [String] = []
-            let test = videos.map({ (video: Videos) in
+            videos.map({ (video: Videos) in
                 videosUrl.append(contentsOf: video.urls?.thumbnailUrls ?? [])
-            
-            //self.thumbnailUrls(video: video)
         })
-            print(test)
             media.append(contentsOf:  videosUrl)
         }
         
         return media
+    }
+}
+extension PostTableViewCell : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        lastComments?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath as IndexPath) as? CommentsTableViewCell
+        cell?.commentLabel.text = lastComments?[indexPath.row] ?? "" + (post?.item?.title ?? "title")
+        return cell ?? UITableViewCell ()
+                
+    }
+    
+}
+extension PostTableViewCell : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        hashTagsVaribles?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath as IndexPath) as? TagCollectionViewCell
+        cell?.tagLabel.text = hashTagsVaribles?[indexPath.row] ?? "" + (post?.item?.title ?? "title")
+        return cell  ?? UICollectionViewCell()
+                
     }
 }
