@@ -31,13 +31,20 @@ enum Theme: Int {
     }
 
     var navigationBackgroundImage: UIImage? {
-        return self == .theme1 ? UIImage(named: "navBackground") : nil
+        return nil
     }
 
     var tabBarBackgroundImage: UIImage? {
-        return self == .theme1 ? UIImage(named: "tabBarBackground") : nil
+        return self == .theme1 ? UIImage(named: "backArrow") : nil
     }
-
+    var backButtonColor: UIColor {
+        switch self {
+        case .theme1:
+            return UIColor().colorFromHexString("000000")
+        case .theme2:
+            return UIColor().colorFromHexString("000000")
+        }
+    }
     var backgroundColor: UIColor {
         switch self {
         case .theme1:
@@ -97,12 +104,13 @@ class ThemeManager {
         // You get your current (selected) theme and apply the main color to the tintColor property of your application’s window.
         let sharedApplication = UIApplication.shared
         sharedApplication.delegate?.window??.tintColor = theme.mainColor
-
+        
         UINavigationBar.appearance().barStyle = theme.barStyle
         UINavigationBar.appearance().setBackgroundImage(theme.navigationBackgroundImage, for: .default)
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backArrow")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backArrow")
-
+       UINavigationBar.appearance().backIndicatorImage = theme.navigationBackgroundImage
+        
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = theme.navigationBackgroundImage
+        UINavigationBar.appearance().tintColor = theme.backButtonColor
         UITabBar.appearance().barStyle = theme.barStyle
         UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
 
