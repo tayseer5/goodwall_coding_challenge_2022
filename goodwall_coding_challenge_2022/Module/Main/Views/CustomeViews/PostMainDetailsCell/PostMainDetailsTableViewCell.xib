@@ -35,17 +35,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1t-PQ-crh" customClass="FullDescrptionsView" customModule="goodwall_coding_challenge_2022" customModuleProvider="target">
-                                <rect key="frame" x="18" y="415" width="284" height="186"/>
+                                <rect key="frame" x="18" y="415" width="284" height="190"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="190" id="dYN-qe-PUO"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI1-iZ-33a">
-                                <rect key="frame" x="18" y="601" width="284" height="75"/>
+                                <rect key="frame" x="18" y="605" width="284" height="71"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9u7-5K-0S2">
-                                        <rect key="frame" x="2" y="25" width="280" height="45"/>
+                                        <rect key="frame" x="2" y="21" width="280" height="45"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="YJ6-3t-fIi"/>
@@ -58,7 +58,7 @@
                                         </collectionViewFlowLayout>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEd-e6-RaK">
-                                        <rect key="frame" x="5" y="3" width="274" height="27"/>
+                                        <rect key="frame" x="5" y="3" width="274" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
@@ -67,10 +67,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="kEd-e6-RaK" secondAttribute="trailing" constant="5" id="3SP-uE-7kh"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="75" id="4AU-DR-tQF"/>
                                     <constraint firstItem="kEd-e6-RaK" firstAttribute="leading" secondItem="kI1-iZ-33a" secondAttribute="leading" constant="5" id="9Z4-77-Bkf"/>
                                     <constraint firstItem="kEd-e6-RaK" firstAttribute="top" secondItem="kI1-iZ-33a" secondAttribute="top" constant="3" id="JPx-yv-kxK"/>
                                     <constraint firstAttribute="trailing" secondItem="9u7-5K-0S2" secondAttribute="trailing" constant="2" id="O6L-0g-9eW"/>
-                                    <constraint firstAttribute="height" constant="75" id="SDq-LW-ZYB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="SDq-LW-ZYB"/>
                                     <constraint firstItem="9u7-5K-0S2" firstAttribute="bottom" secondItem="kI1-iZ-33a" secondAttribute="bottom" constant="-5" id="fsr-eP-iEz"/>
                                     <constraint firstItem="kEd-e6-RaK" firstAttribute="bottom" secondItem="9u7-5K-0S2" secondAttribute="top" constant="5" id="oC7-NG-fJ8"/>
                                     <constraint firstItem="9u7-5K-0S2" firstAttribute="leading" secondItem="kI1-iZ-33a" secondAttribute="leading" constant="2" id="u1t-5h-7lG"/>
@@ -103,6 +104,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="basicInfoView" destination="tkB-Nt-34M" id="JXN-A0-IRd"/>
+                <outlet property="commentsAndTagHight" destination="SDq-LW-ZYB" id="RtZ-DF-FXS"/>
+                <outlet property="commentsAndTagView" destination="kI1-iZ-33a" id="aMb-qn-kyz"/>
+                <outlet property="fullDescriptionView" destination="a1t-PQ-crh" id="a5z-3s-h5c"/>
+                <outlet property="mediaInfoView" destination="F5d-bY-0Ek" id="quk-Oj-zJ9"/>
+                <outlet property="numberOfCommetsLabel" destination="kEd-e6-RaK" id="scw-6e-cBD"/>
+                <outlet property="tagCollectionView" destination="9u7-5K-0S2" id="43A-Jz-CzN"/>
+                <outlet property="tagViewHight" destination="YJ6-3t-fIi" id="Igr-6P-lSD"/>
+            </connections>
             <point key="canvasLocation" x="68.115942028985515" y="118.19196428571428"/>
         </tableViewCell>
     </objects>

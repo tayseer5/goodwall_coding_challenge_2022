@@ -50,7 +50,7 @@ struct PostsListViewModel {
         }
     }
     private func handlingPushedView(post:Post){
-        let postDetailsModel = PostDetailsViewModel(posts: post)
+        let postDetailsModel = PostDetailsViewModel(post: post)
         if let postDetailsViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PostDetailsViewController") as? PostDetailsViewController{
             postDetailsViewController.postDetailsViewModel = postDetailsModel
             self.pushedViewController.onNext(postDetailsViewController)

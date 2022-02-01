@@ -43,7 +43,7 @@ extension PostDetailsViewController: UITableViewDataSource {
             return 1
             // statements
           default:
-            return 0
+            return postDetailsViewModel.comments.count
             // statements
         }
     }
@@ -52,10 +52,12 @@ extension PostDetailsViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postMainDetails", for: indexPath as IndexPath) as? PostMainDetailsTableViewCell
             //cell?.commentLabel.text = lastComments?[indexPath.row] ?? "" + (post?.item?.title ?? "title")
+            cell?.post = postDetailsViewModel.post
             return cell ?? UITableViewCell ()
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath as IndexPath) as? CommentsTableViewCell
-           // cell?.commentLabel.text = lastComments?[indexPath.row] ?? "" + (post?.item?.title ?? "title")
+            cell?.commentLabel.numberOfLines = 0
+            cell?.commentLabel.text =  postDetailsViewModel.comments[indexPath.row]
             return cell ?? UITableViewCell ()
         }
        
