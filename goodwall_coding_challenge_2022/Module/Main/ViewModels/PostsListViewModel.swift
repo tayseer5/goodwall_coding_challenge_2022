@@ -27,8 +27,8 @@ struct PostsListViewModel {
         getPosts()
     }
     //MARK: - public Function
-    func selectItem(post:Post){
-        handlingPushedView(post: post)
+    func selectItem(post:Post,comments:[Comments]){
+        handlingPushedView(post: post, comments: comments)
     }
     //MARK: - private Function
     private func getPosts(){
@@ -49,8 +49,8 @@ struct PostsListViewModel {
             }
         }
     }
-    private func handlingPushedView(post:Post){
-        let postDetailsModel = PostDetailsViewModel(post: post)
+    private func handlingPushedView(post:Post,comments:[Comments]){
+        let postDetailsModel = PostDetailsViewModel(post: post, comments: comments)
         if let postDetailsViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PostDetailsViewController") as? PostDetailsViewController{
             postDetailsViewController.postDetailsViewModel = postDetailsModel
             self.pushedViewController.onNext(postDetailsViewController)

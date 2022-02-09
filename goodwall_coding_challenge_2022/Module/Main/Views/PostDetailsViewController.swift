@@ -18,7 +18,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var tailingSpaceToButton: NSLayoutConstraint!
     @IBOutlet weak var commentTextView: UITextView!
     // MARK: - Varibles
-    var postDetailsViewModel = PostDetailsViewModel()
+    var postDetailsViewModel: PostDetailsViewModel?
     var disposeBag = DisposeBag()
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class PostDetailsViewController: UIViewController {
         postDetailsTableview.dataSource = self
     }
     @IBAction func sendComment(_ sender: Any) {
-        postDetailsViewModel.saveNewComment(comment: commentTextView.text)
+        postDetailsViewModel?.saveNewComment(comment: commentTextView.text)
         postDetailsTableview.reloadSections(IndexSet(integer: 1), with: .automatic)
         commentTextView.text = ""
         postDetailsTableview.scrollToRow(at: IndexPath(row:  postDetailsTableview.numberOfRows(inSection: 1)-1, section: 1), at: .top, animated: true)

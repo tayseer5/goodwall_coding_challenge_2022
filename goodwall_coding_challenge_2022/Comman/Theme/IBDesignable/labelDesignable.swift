@@ -43,13 +43,15 @@ import UIKit
 }
 // MARK: - SecoundyLabel
 @IBDesignable class SecoundyLabel: UILabel {
+    // for init view by storyboard
     required init?(coder aDecoder:NSCoder) {
             super.init(coder:aDecoder)
         commanInit()
         }
-
+//for programatically initializing the view
         override init(frame:CGRect) {
             super.init(frame:frame)
+            
             commanInit()
         }
     private func commanInit(){

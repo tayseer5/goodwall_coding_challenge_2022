@@ -29,16 +29,19 @@ class PostTableViewCell: UITableViewCell {
                 handlingUI()
                 commentsTableView.reloadData()
                 tagCollectionView.reloadData()
+                getComments()
             }
         }
     }
-    var lastComments: [String]?
+    var lastComments: [Comments]?
     var hashTagsVaribles: [String]?
     var disposeBag = DisposeBag()
+    public let postComments : PublishSubject<PostComments?> = PublishSubject()
     // MARK: - override functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bindingData()
         handlingCommentsTable()
         handlingTagsCollectionView()
     }
@@ -60,7 +63,7 @@ class PostTableViewCell: UITableViewCell {
         handlingBasicInfoView()
         handlingMediaView()
         handlingFullDescriptionView()
-        handlingViewHight()
+        handlingHashTagViewHight()
     }
     func handlingBasicInfoView () {
         basicInfoView.mainImage.loadImageFrom(url: post?.item?.author?.picture ?? "")
@@ -85,7 +88,7 @@ class PostTableViewCell: UITableViewCell {
         fullDescriptionView.summeryDescrptionsLabel.text = post?.item?.body
         
     }
-    func handlingViewHight() {
+    func handlingHashTagViewHight() {
         //var tagViewHightValue = 0.0
         //var commentViewHightValue = 0.0
         //var commentsAndTagHightValue = 0.0
@@ -101,8 +104,11 @@ class PostTableViewCell: UITableViewCell {
         }
         commentsAndTagView.layoutIfNeeded()
         commentsAndTagView.updateConstraints()
-       
-        let comments = ["test","hello","test2","tayseer","test3","again","test4","back","test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf","isAllah test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf"]
+        self.contentView.layoutIfNeeded()
+        self.contentView.updateConstraints()
+    }
+    func handlingCommentsViewHight (postComment:PostComments?) {
+        if let comments = postComment?.comments {
         if !(comments.count > 0) {
             commentsViewHight.constant = 1
             //commentsTableView.isHidden = true
@@ -110,7 +116,7 @@ class PostTableViewCell: UITableViewCell {
         } else {
             //commentsTableView.isHidden = false
             numberOfCommetsLabel.text = "\(comments.count) Comments"
-            lastComments = comments.count > 2 ? [comments[comments.count - 1],comments[comments.count - 2]]: [comments[comments.count - 1]]
+           lastComments = comments.count > 2 ? [comments[comments.count - 1] ,comments[comments.count - 2]]: [comments[comments.count - 1]]
             if lastComments?.count == 2 {
                 commentsViewHight.constant = 140
             }else {
@@ -118,8 +124,11 @@ class PostTableViewCell: UITableViewCell {
             }
             commentsTableView.reloadData()
         }
-        commentsAndTagView.layoutIfNeeded()
-        commentsAndTagView.updateConstraints()
+        } else {
+            commentsViewHight.constant = 1
+            //commentsTableView.isHidden = true
+            numberOfCommetsLabel.text = "0 Comments"
+        }
         commentsTableView.layoutIfNeeded()
         commentsTableView.updateConstraints()
         self.contentView.layoutIfNeeded()
@@ -141,6 +150,12 @@ class PostTableViewCell: UITableViewCell {
         tagCollectionView.dataSource = self
     }
     // MARK: - handling Data
+    func bindingData() {
+        postComments
+            .subscribe(onNext: { (postComments) in
+                self.handlingCommentsViewHight(postComment: postComments)
+            }).disposed(by: disposeBag)
+    }
     func handlingMediaData()->[String]{
         var media:[String] = []
         media.append(contentsOf:  post?.item?.pictureNames ?? [])
@@ -154,6 +169,11 @@ class PostTableViewCell: UITableViewCell {
         
         return media
     }
+    private func getComments() {
+        
+        postComments.onNext( WARealmManager.shared.getPostComments(id: post?.item?.id ?? 0))
+       
+    }
 }
 extension PostTableViewCell : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -162,7 +182,7 @@ extension PostTableViewCell : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsCell", for: indexPath as IndexPath) as? CommentsTableViewCell
-        cell?.commentLabel.text = lastComments?[indexPath.row] ?? "" + (post?.item?.title ?? "title")
+        cell?.commentLabel.text = lastComments?[indexPath.row].comment ?? ""
         return cell ?? UITableViewCell ()
                 
     }

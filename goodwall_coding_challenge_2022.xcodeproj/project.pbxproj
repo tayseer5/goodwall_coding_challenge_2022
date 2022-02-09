@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1C2CDF27AA64C900264693 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C2CDE27AA64C900264693 /* RealmManager.swift */; };
+		8B1C2CE227AA66B900264693 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1C2CE127AA66B900264693 /* RealmSwift */; };
+		8B1C2CE427AA66F900264693 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1C2CE327AA66F900264693 /* CommentsModel.swift */; };
 		8B4C015927A41B4000F68EE1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015827A41B4000F68EE1 /* RxCocoa */; };
 		8B4C015B27A41B4000F68EE1 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015A27A41B4000F68EE1 /* RxSwift */; };
 		8B4C015E27A41F4E00F68EE1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C015D27A41F4E00F68EE1 /* Moya */; };
@@ -81,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B1C2CDE27AA64C900264693 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		8B1C2CE327AA66F900264693 /* CommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
 		8B4C016227A4219A00F68EE1 /* GoodWallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodWallAPI.swift; sourceTree = "<group>"; };
 		8B4C016427A421B100F68EE1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8B4C016627A421DD00F68EE1 /* NetworkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkableProtocol.swift; sourceTree = "<group>"; };
@@ -142,6 +147,7 @@
 			files = (
 				8B4C015B27A41B4000F68EE1 /* RxSwift in Frameworks */,
 				8B4C016027A41F4E00F68EE1 /* ReactiveMoya in Frameworks */,
+				8B1C2CE227AA66B900264693 /* RealmSwift in Frameworks */,
 				8B4C015927A41B4000F68EE1 /* RxCocoa in Frameworks */,
 				8B4C015E27A41F4E00F68EE1 /* Moya in Frameworks */,
 				8B4C017027A42B9800F68EE1 /* Kingfisher in Frameworks */,
@@ -191,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				8B4C016127A4216000F68EE1 /* Services */,
+				8B1C2CDE27AA64C900264693 /* RealmManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				8B4C018127A45D7300F68EE1 /* PostsApiResponse.swift */,
+				8B1C2CE327AA66F900264693 /* CommentsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,6 +487,7 @@
 				8B4C015F27A41F4E00F68EE1 /* ReactiveMoya */,
 				8B4C016F27A42B9800F68EE1 /* Kingfisher */,
 				8B64394B27A9C38E00A322DE /* IQKeyboardManagerSwift */,
+				8B1C2CE127AA66B900264693 /* RealmSwift */,
 			);
 			productName = goodwall_coding_challenge_2022;
 			productReference = 8BFE2BD927A4034800056E24 /* goodwall_coding_challenge_2022.app */;
@@ -557,6 +566,7 @@
 				8B4C015C27A41F4D00F68EE1 /* XCRemoteSwiftPackageReference "Moya" */,
 				8B4C016E27A42B9800F68EE1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				8B64394A27A9C38E00A322DE /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				8B1C2CE027AA66B900264693 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 8BFE2BDA27A4034800056E24 /* Products */;
 			projectDirPath = "";
@@ -613,6 +623,7 @@
 			files = (
 				8B4C019B27A46F6400F68EE1 /* loadingViewable.swift in Sources */,
 				8BC8533427A4B5D70056C77A /* labelDesignable.swift in Sources */,
+				8B1C2CDF27AA64C900264693 /* RealmManager.swift in Sources */,
 				8B4C016727A421DD00F68EE1 /* NetworkableProtocol.swift in Sources */,
 				8B4C019927A46F6400F68EE1 /* AnimateloadingView.swift in Sources */,
 				8BFE2BDD27A4034800056E24 /* AppDelegate.swift in Sources */,
@@ -633,6 +644,7 @@
 				8B5129AB27A681A80085F893 /* CommentsTableViewCell.swift in Sources */,
 				8B64394127A97A7A00A322DE /* PostDetailsViewModel.swift in Sources */,
 				8B64394827A9800900A322DE /* PostMainDetailsTableViewCell.swift in Sources */,
+				8B1C2CE427AA66F900264693 /* CommentsModel.swift in Sources */,
 				8B5129B027A68AD00085F893 /* TagCollectionViewCell.swift in Sources */,
 				8B4C018927A45D7300F68EE1 /* PostsApiResponse.swift in Sources */,
 				8B4C018C27A45DBB00F68EE1 /* PostsListViewModel.swift in Sources */,
@@ -988,6 +1000,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8B1C2CE027AA66B900264693 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		8B4C015727A41B4000F68EE1 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1023,6 +1043,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8B1C2CE127AA66B900264693 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B1C2CE027AA66B900264693 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		8B4C015827A41B4000F68EE1 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8B4C015727A41B4000F68EE1 /* XCRemoteSwiftPackageReference "RxSwift" */;

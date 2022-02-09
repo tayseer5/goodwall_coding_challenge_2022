@@ -84,7 +84,7 @@ class PostsListViewController: UIViewController {
                 let transform = CATransform3DTranslate(CATransform3DIdentity, 0, -250, 0)
                 //cell.layer.transform = transform
                 UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                    (cell as? PostTableViewCell)?.handlingViewHight()
+                    (cell as? PostTableViewCell)?.handlingHashTagViewHight()
                     //cell.alpha = 1
                    // cell.layer.transform = CATransform3DIdentity
                 }, completion: nil)

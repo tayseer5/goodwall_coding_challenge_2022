@@ -12,11 +12,11 @@ import RxCocoa
 struct PostDetailsViewModel {
 // MARK: - Subjects
 //subject is observable and observer
-public var post :Post?
-var comments = ["test","hello","test2","tayseer","test3","again","test4","back","test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf","isAllah test5 \n fdfdf test5 \n fdfdf test5 \n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf test5 /n fdfdf"]
+    public var post :Post?
+    public var comments :[Comments]
 // MARK: - private Varibles
     mutating func saveNewComment(comment:String){
-        comments.append(comment)
+        //comments.append(comment)
         
     }
 
